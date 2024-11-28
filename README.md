@@ -29,5 +29,4 @@ A full-stack web application for book enthusiasts to **browse**, **add**, **edit
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/SiyumiSathnaraKumarasinghe/book-review-app.git
-   cd book-review-app
+   https://github.com/SiyumiSathnaraKumarasinghe/book-review-app.git
