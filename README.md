@@ -1,26 +1,33 @@
-# Book Review Application
+# 📚 Book Review Application  
 
-This is a full-stack web application where users can browse, add, edit, and delete book reviews. 
-The application allows users to share their thoughts on books they have read, including ratings and comments. 
-It provides a platform to discover new books through community reviews.
+A full-stack web application for book enthusiasts to **browse**, **add**, **edit**, and **delete** book reviews. Share your thoughts on books you've read, discover new favorites, and engage with a community of book lovers.  
 
-## Technologies Used
+🌐 **Live Demo**: [Book Review App](https://67486d1e7fd745b9e01d3572--famous-jalebi-0640d7.netlify.app/)  
 
-- **Backend**: Node.js with Express
-- **Database**: MongoDB Atlas
-- **Frontend**: React.js
-- **Version Control**: Git & GitHub
+---
 
-## Features
+## 🛠 Technologies Used  
 
-- **Add Book Names and Reviews**: Users can submit their reviews, including book title, author, rating (1-5 stars), and review text.
-- **View All Reviews**: Displays a list of all book reviews with options to delete or edit them.
-- **Edit Reviews**: Users can modify existing reviews.
-- **Delete Reviews**: Users can remove reviews they no longer want to keep.
-- **Sort and Filter**: Option to filter reviews based on rating and sort by the date added.
+- **Frontend**: React.js  
+- **Backend**: Node.js with Express  
+- **Database**: MongoDB Atlas  
+- **Version Control**: Git & GitHub  
 
-### Installation
+---
 
-1. Clone the repository:
+## ✨ Features  
+
+- **📖 Add Book Reviews**: Share your thoughts with a title, author, rating (1-5 stars), and review text.  
+- **👀 View Reviews**: Browse a list of reviews with all details, including date added.  
+- **✏️ Edit Reviews**: Update any of your reviews with ease.  
+- **🗑️ Delete Reviews**: Remove unwanted reviews effortlessly.  
+- **🔍 Sort & Filter**: Filter reviews by ratings and sort them by date for a tailored browsing experience.  
+
+---
+
+## 🚀 Installation  
+
+1. **Clone the Repository**  
    ```bash
    git clone https://github.com/SiyumiSathnaraKumarasinghe/book-review-app.git
+   cd book-review-app
