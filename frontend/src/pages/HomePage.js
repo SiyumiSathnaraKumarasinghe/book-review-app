@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ReviewList from '../components/ReviewList';
 import ReviewForm from '../components/ReviewForm';
+import bookwall from '../assets/bookwall.jpg'; 
 
 const HomePage = () => {
     const [reviews, setReviews] = useState([]);
 
-    // Fetch reviews from the backend
+  
     useEffect(() => {
         axios
             .get('http://localhost:5000/reviews')
@@ -19,8 +20,33 @@ const HomePage = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Book Reviews</h1>
+        <div
+            style={{
+                backgroundImage: `url(${bookwall})`, 
+                backgroundSize: 'cover',  
+                backgroundPosition: 'center',  
+                backgroundAttachment: 'fixed',  
+                opacity: 0.75,  
+                minHeight: '100vh',  
+            }}
+        >
+            
+            <div
+                style={{
+                    backgroundColor: '#4CAF50', 
+                    height: '100px', 
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    fontFamily: 'Creepster, cursive', 
+                    color: '#fff', 
+                    fontSize: '1.7rem',
+                    textAlign: 'center',
+                }}
+            >
+                <h1>ReadRate</h1>
+            </div>
+
             <ReviewForm setReviews={setReviews} />
             <ReviewList reviews={reviews} setReviews={setReviews} />
         </div>

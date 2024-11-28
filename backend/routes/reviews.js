@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Review = require('../models/Review');
 
-// GET /reviews: Retrieve all reviews
+
 router.get('/', async (req, res) => {
     try {
         const reviews = await Review.find();
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// POST /reviews: Create a new review
+
 router.post('/', async (req, res) => {
     const review = new Review({
         bookTitle: req.body.bookTitle,
@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// PUT /reviews/:id: Update a specific review
+
 router.put('/:id', async (req, res) => {
     try {
         const review = await Review.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -40,7 +40,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-// DELETE /reviews/:id: Delete a specific review
+
 router.delete('/:id', async (req, res) => {
     try {
         const review = await Review.findByIdAndDelete(req.params.id);
