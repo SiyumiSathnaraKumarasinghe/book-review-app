@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; 
 import {
     Table,
     TableBody,
@@ -15,15 +16,14 @@ import {
 
 const ReviewList = ({ reviews, setReviews }) => {
     const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate(); 
 
-    
     const filteredReviews = reviews.filter((review) =>
         review.bookTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
         review.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
         review.reviewText.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    
     const handleDelete = (id) => {
         axios
             .delete(`http://localhost:5000/reviews/${id}`)
@@ -35,9 +35,13 @@ const ReviewList = ({ reviews, setReviews }) => {
             });
     };
 
+    const handleUpdate = (review) => {
+        
+        navigate('/edit', { state: { review } });
+    };
+
     return (
         <Box sx={{ width: '60%', margin: '2rem auto' }}>
-            
             <Box sx={{ marginBottom: '1rem' }}>
                 <TextField
                     label="Search Reviews"
@@ -51,10 +55,10 @@ const ReviewList = ({ reviews, setReviews }) => {
                         backgroundColor: 'white',
                         borderRadius: '15px',
                         '& .MuiOutlinedInput-root': {
-                        boxShadow: 'none', 
-                        borderRadius: '15px', 
-                        '& fieldset': {
-                        border: 'none', 
+                            boxShadow: 'none',
+                            borderRadius: '15px',
+                            '& fieldset': {
+                                border: 'none',
                             },
                         },
                     }}
@@ -70,7 +74,7 @@ const ReviewList = ({ reviews, setReviews }) => {
                 }}
             >
                 <Table>
-                    <TableHead sx={{ backgroundColor: '#81d4fa'}}>
+                    <TableHead sx={{ backgroundColor: '#81d4fa' }}>
                         <TableRow>
                             <TableCell><strong>Book Title</strong></TableCell>
                             <TableCell><strong>Author</strong></TableCell>
@@ -87,6 +91,14 @@ const ReviewList = ({ reviews, setReviews }) => {
                                 <TableCell>{review.rating}</TableCell>
                                 <TableCell>{review.reviewText}</TableCell>
                                 <TableCell>
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        onClick={() => handleUpdate(review)}
+                                        sx={{ marginRight: '0.5rem' }}
+                                    >
+                                        Update
+                                    </Button>
                                     <Button
                                         variant="contained"
                                         color="error"
